@@ -1,6 +1,6 @@
 streamlit
 requests
-nltk
+nltk==3.7
 numpy
 pandas
 math
