@@ -1,0 +1,10 @@
+streamlit
+unidecode
+bs4
+requests
+numpy
+pandas
+io
+csv
+time
+re
