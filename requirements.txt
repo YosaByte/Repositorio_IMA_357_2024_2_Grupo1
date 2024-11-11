@@ -1,10 +1,7 @@
 streamlit
-unidecode
-bs4
 requests
+nltk
 numpy
 pandas
-io
-csv
-time
-re
+math
+copy
