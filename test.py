@@ -8,6 +8,8 @@ import nltk
 from nltk import SnowballStemmer
 from nltk.tokenize import TreebankWordTokenizer
 
+nltk.download('stopwords') 
+
 stemmer = SnowballStemmer('spanish')
 stop_words = nltk.corpus.stopwords.words('spanish') #stop words en español
 stop_words_en = nltk.corpus.stopwords.words('english')
