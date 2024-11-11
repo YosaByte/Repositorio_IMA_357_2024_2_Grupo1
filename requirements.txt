@@ -3,5 +3,4 @@ requests
 nltk==3.7
 numpy
 pandas
-math
 copy
