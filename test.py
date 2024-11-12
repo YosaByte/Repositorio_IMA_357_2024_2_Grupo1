@@ -51,7 +51,7 @@ def sim_coseno(vec1, vec2):
     return dot_prod / (norm_1 * norm_2)
 
 
-#document_BoW_vector = BoW_vec(docs=documentos, tokenizer=tokenizer)
+
 
 
 st.title('App item 3')
@@ -106,7 +106,7 @@ else:
 
 st.write('Redacte una oración para encontrar la noticia donde su oración se reitere más veces')
 
-texto=st.text_input('Escriba su oración')
+texto=st.text_input('Escriba su oración','Noticias del mundo')
 
 documentos=df_news['Cuerpo'].tolist()
 
