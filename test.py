@@ -149,7 +149,7 @@ for lista_orden in lista3:
     if lista_orden>frecuente:
         frecuente=lista_orden
         id_p_cuerpo=lista3.index(lista_orden)
-if id_p_cuerpo!=30 and max_similitud!=0:
+if id_p_cuerpo!=30:
     
     st.write("La noticia que lleva por título '"+df_news['Titular'][id_maxima_sim]+"' tiene la mejor similutud coseno respecto a su oración")
     st.write("Similitud Coseno: "+str(max_similitud)+".")
