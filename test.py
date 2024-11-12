@@ -151,7 +151,7 @@ for lista_orden in lista3:
 if id_p_cuerpo!=30:
     
     st.write("La noticia que lleva por título "+df_news['Titular'][id_maxima_sim]+" tiene la mejor similutud coseno respecto a su oración")
-    st.write("Similitud Coseno: "+max_similitud+".")
+    st.write("Similitud Coseno: "+str(max_similitud)+".")
     
     body={
         'Titular':df_news['Titular'][id_p_cuerpo],
