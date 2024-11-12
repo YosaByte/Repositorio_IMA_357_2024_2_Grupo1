@@ -117,7 +117,13 @@ documentos.append(texto)
 
 document_BoW_vector = BoW_vec(docs=documentos, tokenizer=tokenizer)
 
-lista=[]
+lista_cos=[]
+for j,doc_1 in enumerate(document_BoW_vector):
+        if j<30:
+             lista_cos.append(sim_coseno(doc_1, document_BoW_vector[30]))
+max_similitud=max(lista_cos)
+id_maxima_sim=lista_cos.index(max_similitud)
+
 lista2=[]
 for claves,valores in document_BoW_vector[30].items():
     lista2.append(valores)
@@ -146,6 +152,10 @@ for lista_orden in lista3:
         frecuente=lista_orden
         id_p_cuerpo=lista3.index(lista_orden)
 if id_p_cuerpo!=30:
+    
+    st.write("La noticia que lleva por título "+df_news['Titular'][id_maxima_sim]+" tiene la mejor similutud coseno respecto a su oración")
+    st.write("Similitud Coseno: "+max_similitud+".")
+    
     body={
         'Titular':df_news['Titular'][id_p_cuerpo],
         'Frecuencia':frecuente
@@ -153,6 +163,7 @@ if id_p_cuerpo!=30:
     result=pd.DataFrame(body,columns=['Titular','Frecuencia'],index=[id_p_cuerpo])
     st.write('Resultado de la plabra "'+texto+'"')
     st.data_editor(result) 
+
 else: 
     result='Pruebe otra oración'
     #st.write('Resultado de la plabra "'+palabra+'"')
