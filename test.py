@@ -92,16 +92,20 @@ for lista_orden in lista3:
     if lista_orden[id_palabra]>frecuente:
         frecuente=lista_orden[id_palabra]
         id_p_cuerpo=lista3.index(lista_orden)
-
-body={
+if id_p_cuerpo!=30:
+    body={
         'Titular':df_news['Titular'][id_p_cuerpo],
         'Frecuencia':frecuente
-    }
+        }
+    result=pd.DataFrame(body,columns=['Titular','Frecuencia'],index=[id_p_cuerpo])
+    st.write('Resultado de la plabra "'+palabra+'"')
+    st.data_editor(result) 
+else: 
+    result='Pruebe otra palabra'
+    #st.write('Resultado de la plabra "'+palabra+'"')
+    st.data_editor(result) 
 
-result=pd.DataFrame(body,columns=['Titular','Frecuencia'],index=[id_p_cuerpo])
 
-st.write('Resultado de la plabra "'+palabra+'"')
-st.data_editor(result) 
 
 st.write('Redacte una oración para encontrar la noticia donde su oración se reitere más veces')
 
@@ -141,15 +145,18 @@ for lista_orden in lista3:
     if lista_orden>frecuente:
         frecuente=lista_orden
         id_p_cuerpo=lista3.index(lista_orden)
-body={
+if id_p_cuerpo!=30:
+    body={
         'Titular':df_news['Titular'][id_p_cuerpo],
         'Frecuencia':frecuente
-    }
-result_2=pd.DataFrame(body,columns=['Titular','Frecuencia'],index=[id_p_cuerpo])
-
-st.write('Resultado de "'+texto+'"')
-
-st.data_editor(result_2)
+        }
+    result=pd.DataFrame(body,columns=['Titular','Frecuencia'],index=[id_p_cuerpo])
+    st.write('Resultado de la plabra "'+palabra+'"')
+    st.data_editor(result) 
+else: 
+    result='Pruebe otra oración'
+    #st.write('Resultado de la plabra "'+palabra+'"')
+    st.data_editor(result) 
 #result_word=pd.DataFrame(index=10,)
 
 
