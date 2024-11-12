@@ -61,8 +61,8 @@ st.title('App item 3')
 
 st.header('Tabla de noticias recopiladas de ElDiario')
 
-url='https://raw.githubusercontent.com/YosaByte/App/refs/heads/main/grupo_1.csv?token=GHSAT0AAAAAAC2GHJMHJ2HOA2D6TGX4IXU6ZZSTNRQ' 
-df_news=pd.read_csv(url,header=0) 
+#url='https://raw.githubusercontent.com/YosaByte/App/refs/heads/main/grupo_1.csv?token=GHSAT0AAAAAAC2GHJMHJ2HOA2D6TGX4IXU6ZZSTNRQ' 
+df_news=pd.read_csv(r'grupo_1.csv',header=0) 
 
 st.data_editor(df_news)
 
