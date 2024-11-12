@@ -113,13 +113,14 @@ documentos=df_news['Cuerpo'].tolist()
 documentos.append(texto)
 
 document_BoW_vector = BoW_vec(docs=documentos, tokenizer=tokenizer)
-
-lista_cos=[]
-for j,doc_1 in enumerate(document_BoW_vector):
+if texto=='':
+    lista_cos=[]
+    for j,doc_1 in enumerate(document_BoW_vector):
         if j<30:
-             lista_cos.append(sim_coseno(doc_1, document_BoW_vector[30]))
-max_similitud=max(lista_cos)
-id_maxima_sim=lista_cos.index(max_similitud)
+            lista_cos.append(sim_coseno(doc_1, document_BoW_vector[30]))
+    max_similitud=max(lista_cos)
+    id_maxima_sim=lista_cos.index(max_similitud)
+else: max_similitud=0
 
 lista2=[]
 for claves,valores in document_BoW_vector[30].items():
@@ -148,7 +149,7 @@ for lista_orden in lista3:
     if lista_orden>frecuente:
         frecuente=lista_orden
         id_p_cuerpo=lista3.index(lista_orden)
-if id_p_cuerpo!=30:
+if id_p_cuerpo!=30 and max_similitud!=0:
     
     st.write("La noticia que lleva por título '"+df_news['Titular'][id_maxima_sim]+"' tiene la mejor similutud coseno respecto a su oración")
     st.write("Similitud Coseno: "+str(max_similitud)+".")
