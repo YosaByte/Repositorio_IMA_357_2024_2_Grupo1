@@ -151,7 +151,7 @@ if id_p_cuerpo!=30:
         'Frecuencia':frecuente
         }
     result=pd.DataFrame(body,columns=['Titular','Frecuencia'],index=[id_p_cuerpo])
-    st.write('Resultado de la plabra "'+palabra+'"')
+    st.write('Resultado de la plabra "'+texto+'"')
     st.data_editor(result) 
 else: 
     result='Pruebe otra oración'
