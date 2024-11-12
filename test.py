@@ -150,7 +150,7 @@ for lista_orden in lista3:
         id_p_cuerpo=lista3.index(lista_orden)
 if id_p_cuerpo!=30:
     
-    st.write("La noticia que lleva por título "+df_news['Titular'][id_maxima_sim]+" tiene la mejor similutud coseno respecto a su oración")
+    st.write("La noticia que lleva por título '"+df_news['Titular'][id_maxima_sim]+"' tiene la mejor similutud coseno respecto a su oración")
     st.write("Similitud Coseno: "+str(max_similitud)+".")
     
     body={
@@ -158,7 +158,7 @@ if id_p_cuerpo!=30:
         'Frecuencia':frecuente
         }
     result=pd.DataFrame(body,columns=['Titular','Frecuencia'],index=[id_p_cuerpo])
-    st.write('Resultado de la plabra "'+texto+'"')
+    st.write('Resultado de frecuencia de la oración "'+texto+'"')
     st.data_editor(result) 
 
 else: 
