@@ -113,14 +113,13 @@ documentos=df_news['Cuerpo'].tolist()
 documentos.append(texto)
 
 document_BoW_vector = BoW_vec(docs=documentos, tokenizer=tokenizer)
-if texto=='':
-    lista_cos=[]
-    for j,doc_1 in enumerate(document_BoW_vector):
-        if j<30:
-            lista_cos.append(sim_coseno(doc_1, document_BoW_vector[30]))
-    max_similitud=max(lista_cos)
-    id_maxima_sim=lista_cos.index(max_similitud)
-else: max_similitud=0
+lista_cos=[]
+for j,doc_1 in enumerate(document_BoW_vector):
+    if j<30:
+        lista_cos.append(sim_coseno(doc_1, document_BoW_vector[30]))
+max_similitud=max(lista_cos)
+id_maxima_sim=lista_cos.index(max_similitud)
+
 
 lista2=[]
 for claves,valores in document_BoW_vector[30].items():
