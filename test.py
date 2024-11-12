@@ -103,7 +103,7 @@ if id_p_cuerpo!=30:
 else: 
     result='Pruebe otra palabra'
     #st.write('Resultado de la plabra "'+palabra+'"')
-    st.data_editor(result) 
+    st.write(result) 
 
 
 
@@ -156,7 +156,7 @@ if id_p_cuerpo!=30:
 else: 
     result='Pruebe otra oración'
     #st.write('Resultado de la plabra "'+palabra+'"')
-    st.data_editor(result) 
+    st.write(result) 
 #result_word=pd.DataFrame(index=10,)
 
 
